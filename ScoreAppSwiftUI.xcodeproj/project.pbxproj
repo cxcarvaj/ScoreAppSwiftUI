@@ -79,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				FB98EA512D930FE5006A53BA /* Preview Content */,
+				FB98EA522D930FE5006A53BA /* Assets.xcassets */,
 				FB98EA542D930FE5006A53BA /* ScoreAppSwiftUIApp.swift */,
 				FB98EA532D930FE5006A53BA /* ContentView.swift */,
 				FB98EA6F2D9319B2006A53BA /* Components */,
