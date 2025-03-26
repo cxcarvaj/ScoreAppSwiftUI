@@ -5,7 +5,7 @@
 //  Created by Carlos Xavier Carvajal Villegas on 10/3/25.
 //
 
-import UIKit
+import SwiftUI
 
 struct RepositoryTest: DataRepository {
     var url: URL {
@@ -17,6 +17,14 @@ struct RepositoryTest: DataRepository {
         URL.documentsDirectory.appending(path: "scoresdatatest").appendingPathExtension(for: .json)
     }
     
+    func getScores() throws -> [Score] {
+        try load(url: url, type: [ScoreDTO].self).map(\.toScore).map {
+            var score = $0
+            score.favorited = Bool.random()
+            return score
+        }
+    }
+    
     func saveScores(_ scores: [Score]) throws {}
 }
 
@@ -26,5 +34,15 @@ extension Score {
 
 
 extension ContentView {
-    static let preview = ContentView(vm: ScoresVM(repository: RepositoryTest()))
+    static var preview: some View {
+        ContentView()
+            .environmentObject(ScoresVM(repository: RepositoryTest()))
+    }
+}
+
+extension FavoritesView {
+    static var preview: some View {
+        FavoritesView()
+            .environmentObject(ScoresVM(repository: RepositoryTest()))
+    }
 }

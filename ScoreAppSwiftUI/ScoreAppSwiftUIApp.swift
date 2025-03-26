@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ScoreAppSwiftUIApp: App {
+    @StateObject var vm = ScoresVM()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabScreen()
+                .environmentObject(vm)
         }
     }
 }
