@@ -37,9 +37,7 @@ struct FavoritesView: View {
             }
             .safeAreaPadding()
             .navigationTitle("Favorites")
-            .navigationDestination(for: Score.self) { score in
-                ViewScore(score: score)
-            }
+            .navigationDestination(for: Score.self, destination: viewScore)
         }
     }
 }

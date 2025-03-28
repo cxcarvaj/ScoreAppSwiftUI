@@ -28,4 +28,12 @@ final class EditScoreVM: ObservableObject {
         length = score.length
         tracks = score.tracks
     }
+    
+    func isValueEmpty(_ value: String) -> String? {
+        value.isEmpty ? " is required" : nil
+    }
+    
+    func validateYear(_ year: Int) -> String? {
+        year < 1900 || year > 2050 ? " must be between 1900 and 2050" : nil
+    }
 }

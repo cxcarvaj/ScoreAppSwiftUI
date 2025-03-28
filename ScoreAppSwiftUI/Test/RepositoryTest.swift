@@ -46,3 +46,19 @@ extension FavoritesView {
             .environmentObject(ScoresVM(repository: RepositoryTest()))
     }
 }
+
+extension MainTabScreen {
+    static var preview: some View {
+        MainTabScreen()
+            .environmentObject(ScoresVM(repository: RepositoryTest()))
+    }
+}
+
+extension EditScoreView {
+    static var preview: some View {
+        NavigationStack {
+            EditScoreView(editScoreVM: EditScoreVM(score: .test))
+        }
+        .environmentObject(ScoresVM(repository: RepositoryTest()))
+    }
+}

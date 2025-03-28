@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		FB50DB2A2D93370000D4086E /* SortedByButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50DB292D93370000D4086E /* SortedByButton.swift */; };
+		FB799EBE2D9597D7005A6288 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB799EBD2D9597D7005A6288 /* SearchField.swift */; };
+		FB799EC02D95C352005A6288 /* CoolTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB799EBF2D95C352005A6288 /* CoolTextField.swift */; };
+		FB799EC22D963DF1005A6288 /* CoolTextFieldValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB799EC12D963DF1005A6288 /* CoolTextFieldValue.swift */; };
 		FB98EA562D930FE5006A53BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB98EA502D930FE5006A53BA /* Preview Assets.xcassets */; };
 		FB98EA572D930FE5006A53BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB98EA522D930FE5006A53BA /* Assets.xcassets */; };
 		FB98EA582D930FE5006A53BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98EA532D930FE5006A53BA /* ContentView.swift */; };
@@ -31,6 +34,9 @@
 
 /* Begin PBXFileReference section */
 		FB50DB292D93370000D4086E /* SortedByButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedByButton.swift; sourceTree = "<group>"; };
+		FB799EBD2D9597D7005A6288 /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
+		FB799EBF2D95C352005A6288 /* CoolTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolTextField.swift; sourceTree = "<group>"; };
+		FB799EC12D963DF1005A6288 /* CoolTextFieldValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolTextFieldValue.swift; sourceTree = "<group>"; };
 		FB98EA3F2D930FD2006A53BA /* ScoreAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB98EA502D930FE5006A53BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FB98EA522D930FE5006A53BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,8 +163,11 @@
 		FB98EA6F2D9319B2006A53BA /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FB799EC12D963DF1005A6288 /* CoolTextFieldValue.swift */,
+				FB799EBF2D95C352005A6288 /* CoolTextField.swift */,
 				FB98EA702D9319D1006A53BA /* ScoresCell.swift */,
 				FB50DB292D93370000D4086E /* SortedByButton.swift */,
+				FB799EBD2D9597D7005A6288 /* SearchField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -248,17 +257,20 @@
 			files = (
 				FBEAE73E2D944CAC006CFB10 /* ViewScore.swift in Sources */,
 				FB98EA582D930FE5006A53BA /* ContentView.swift in Sources */,
+				FB799EC02D95C352005A6288 /* CoolTextField.swift in Sources */,
 				FB98EA652D931230006A53BA /* JSONLoader.swift in Sources */,
 				FB98EA692D931290006A53BA /* ScoresVM.swift in Sources */,
 				FB98EA662D931230006A53BA /* DataRepository.swift in Sources */,
 				FB98EA5F2D9310B5006A53BA /* ScoreDTO.swift in Sources */,
 				FB98EA712D9319D1006A53BA /* ScoresCell.swift in Sources */,
+				FB799EBE2D9597D7005A6288 /* SearchField.swift in Sources */,
 				FB98EA612D93120A006A53BA /* Score.swift in Sources */,
 				FB50DB2A2D93370000D4086E /* SortedByButton.swift in Sources */,
 				FBEAE7422D9450EF006CFB10 /* EditScoreView.swift in Sources */,
 				FBEAE73C2D94383B006CFB10 /* FavoritesView.swift in Sources */,
 				FBEAE7472D94554A006CFB10 /* ViewBuilders.swift in Sources */,
 				FBEAE73A2D9436DE006CFB10 /* MainTabScreen.swift in Sources */,
+				FB799EC22D963DF1005A6288 /* CoolTextFieldValue.swift in Sources */,
 				FB98EA592D930FE5006A53BA /* ScoreAppSwiftUIApp.swift in Sources */,
 				FB98EA6C2D931607006A53BA /* RepositoryTest.swift in Sources */,
 				FBEAE7442D94521A006CFB10 /* EditScoreVM.swift in Sources */,

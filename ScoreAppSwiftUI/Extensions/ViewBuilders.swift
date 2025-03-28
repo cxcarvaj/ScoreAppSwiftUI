@@ -11,4 +11,8 @@ extension View {
     func editScore(score: Score) -> some View {
         EditScoreView(editScoreVM: EditScoreVM(score: score))
     }
+    
+    func viewScore(score: Score) -> some View {
+        ViewScore(score: score)
+    }
 }

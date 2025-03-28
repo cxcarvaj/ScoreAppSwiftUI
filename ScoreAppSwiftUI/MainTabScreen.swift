@@ -41,5 +41,5 @@ struct MainTabScreen: View {
 }
 
 #Preview {
-    MainTabScreen()
+    MainTabScreen.preview
 }

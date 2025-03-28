@@ -15,6 +15,7 @@ enum SortedBy: String, CaseIterable, Identifiable {
     var id: Self { self }
 }
 
+@MainActor
 final class ScoresVM: ObservableObject {
     
     private let repository: DataRepository
@@ -44,6 +45,10 @@ final class ScoresVM: ObservableObject {
     
     var scoresByComposerIsEmpty: Bool {
         scoresByComposers.flatMap { $0 }.isEmpty && !searchText.isEmpty
+    }
+    
+    var composers: [String] {
+        Set(scores.map(\.composer)).sorted()
     }
 
     // Agrupa los scores por compositor
@@ -118,7 +123,10 @@ final class ScoresVM: ObservableObject {
     
     func toggleFavorite(score: Score) {
         if let index = scores.firstIndex(of: score) {
-            scores[index].favorited.toggle()
+            Task { @MainActor [index] in
+                try await Task.sleep(for: .seconds(1))
+                scores[index].favorited.toggle()
+            }
         }
     }
     

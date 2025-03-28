@@ -13,6 +13,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
+                SearchField(placeholder: "Search a composer", searchText: $vm.searchText)
                 if !vm.scoresByComposerIsEmpty {
                     ForEach(vm.scoresByComposers, id: \.self) { scores in
                         if scores.count > 0 {
@@ -39,9 +40,10 @@ struct ContentView: View {
                     )
                 }
             }
+            .listStyle(.plain)
             .navigationTitle("Scores")
             .navigationDestination(for: Score.self, destination: editScore)
-            .searchable(text: $vm.searchText, prompt: "Search a score")
+//            .searchable(text: $vm.searchText, prompt: "Search a score")
             .sortedByButton(orderBy: $vm.orderBy)
         }
     }
