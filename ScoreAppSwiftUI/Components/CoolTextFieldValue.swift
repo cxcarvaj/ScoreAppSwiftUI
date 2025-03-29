@@ -20,7 +20,7 @@ struct CoolTextFieldValue<Format : ParseableFormatStyle>: View where Format.Form
 
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text(placeholder)
+            Text(label)
                 .font(.headline)
                 .padding(.leading)
             HStack(alignment: .top) {

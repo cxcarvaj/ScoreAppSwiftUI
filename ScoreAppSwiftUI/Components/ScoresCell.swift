@@ -33,11 +33,8 @@ struct ScoresCell: View {
             .padding(.vertical, 5)
             .frame(height: 100)
             Spacer()
-            Image(score.cover)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 100)
-                .clipShape(.rect(cornerRadius: 10))
+            ScoreCover(score: score)
+
         }
         .swipeActions(edge: .trailing) {
             Button {

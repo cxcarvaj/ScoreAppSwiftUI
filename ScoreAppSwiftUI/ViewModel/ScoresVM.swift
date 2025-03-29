@@ -130,5 +130,11 @@ final class ScoresVM: ObservableObject {
         }
     }
     
+    func updateScore(score: Score) {
+        if let index = scores.firstIndex(where: { $0.id == score.id }) {
+            scores[index] = score
+        }
+    }
+    
     
 }

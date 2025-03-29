@@ -17,7 +17,7 @@ struct CoolTextField: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text(placeholder)
+            Text(label)
                 .font(.headline)
                 .padding(.leading)
             HStack(alignment: .top) {

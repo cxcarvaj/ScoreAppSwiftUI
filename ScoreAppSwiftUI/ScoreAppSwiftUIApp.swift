@@ -15,6 +15,9 @@ struct ScoreAppSwiftUIApp: App {
         WindowGroup {
             MainTabScreen()
                 .environmentObject(vm)
+                .onAppear {
+                    print(URL.documentsDirectory)
+                }
         }
     }
 }
