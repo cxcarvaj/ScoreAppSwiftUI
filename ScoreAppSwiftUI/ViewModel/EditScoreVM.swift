@@ -26,6 +26,9 @@ final class EditScoreVM: ObservableObject {
     
     @Published var cover: UIImage?
     
+    @Published var showAlert: Bool = false
+    @Published var errorMsg: String = ""
+    
     let score: Score
     
     init(score: Score) {
@@ -79,6 +82,26 @@ final class EditScoreVM: ObservableObject {
     }
     
     func saveScore() -> Score? {
+        errorMsg = ""
+        
+        if let msg = isValueEmpty(title) {
+            errorMsg += "Title\(msg)\n"
+        }
+        if let msg = validateYear(year) {
+            errorMsg += "Year\(msg)\n"
+        }
+        if let msg = validateLenght(length) {
+            errorMsg += "Length\(msg)\n"
+        }
+        if tracks.filter({ $0.isEmpty }).count > 0 {
+            errorMsg += "At least one track must be filled\n"
+        }
+        if !errorMsg.isEmpty {
+            errorMsg = String(errorMsg.dropLast())
+            showAlert = true
+            return nil
+        }
+        
         let newScore = Score(id: score.id,
                              title: title,
                              composer: composer,

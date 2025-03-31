@@ -104,7 +104,7 @@ struct EditScoreView: View {
     //                            .onDrag { NSItemProvider(object: UIImage(named: editScoreVM.score.cover)!) } preview: {
     //                                Image(editScoreVM.score.cover)
     //                            }
-                        
+                            .accessibilityHint(Text("Cover of the scores"))
                             .draggable(Image(editScoreVM.score.cover)) {
                                 Image(editScoreVM.score.cover)
                             }
@@ -153,6 +153,9 @@ struct EditScoreView: View {
                     List {
                         ForEach($editScoreVM.tracks, id: \.self) { $track in
                             TextField("Enter the track name", text: $track)
+                                .accessibilityLabel("\(track). Enter the track name")
+                                .accessibilityHint("Enter the name of the track.")
+                                .accessibilityValue(track)
                         }
                         .onDelete(perform: editScoreVM.deleteTrackAt)
                         .onMove(perform: editScoreVM.moveTrack)
@@ -186,20 +189,28 @@ struct EditScoreView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button {
-                        if let newScore = editScoreVM.saveScore() {
-                            vm.updateScore(score: newScore)
-                            dismiss()
-                        }
+                    HStack {
+                        ShareScore(score: editScoreVM.score)
                         
-                    } label: {
-                        Text("Save")
+                        Button {
+                            if let newScore = editScoreVM.saveScore() {
+                                vm.updateScore(score: newScore)
+                                dismiss()
+                            }
+                            
+                        } label: {
+                            Text("Save")
+                        }
                     }
                     
                 }
             }
         }
         .safeAreaPadding()
+        .alert("Validation Error",
+               isPresented: $editScoreVM.showAlert) {} message: {
+            Text(editScoreVM.errorMsg)
+        }
     }
 }
 

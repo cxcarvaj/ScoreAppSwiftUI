@@ -27,6 +27,7 @@ struct SearchField: View {
                         .fill(searchColor)
                         .opacity(isFocused ? 1.0 : 0.0)
                 }
+                .accessibilityHidden(true)
             
             TextField(placeholder, text: $searchText)
                 .onChange(of: isFocused) {
@@ -55,6 +56,10 @@ struct SearchField: View {
 //                .opacity(0.5)
             }
         }
+        .accessibilityElement(children: .combine) //Esto le dice que tome al componente como uno solo
+        .accessibilityAddTraits(.isSearchField)
+        .accessibilityLabel(Text("Search field for scores"))
+        .accessibilityHint(Text("Enter a score title to search"))
         .padding(5)
 //        .padding(.horizontal)
 //        .padding(.vertical, 10)

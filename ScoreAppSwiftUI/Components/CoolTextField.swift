@@ -20,11 +20,16 @@ struct CoolTextField: View {
             Text(label)
                 .font(.headline)
                 .padding(.leading)
+                .accessibilityHidden(true)
             HStack(alignment: .top) {
                 TextField(placeholder,
                           text: $value,
                           axis: .vertical)
                 //                        .lineLimit(2, reservesSpace: true)
+                .accessibilityLabel("\(label). \(placeholder)")
+                .accessibilityHint("TextField. \(validation(value) != nil ? "Error: \(errorMessage!)" : "Enter a \(label)")")
+                .accessibilityValue(value)
+                
                 if !value.isEmpty {
                     Button {
                         value = ""
@@ -34,6 +39,8 @@ struct CoolTextField: View {
                     }
                     .buttonStyle(.plain)
                     .opacity(0.2)
+                    .accessibilityLabel("Erase text")
+                    .accessibilityHint("Erase the text in the text field")
                 }
             }
             .padding(.horizontal)

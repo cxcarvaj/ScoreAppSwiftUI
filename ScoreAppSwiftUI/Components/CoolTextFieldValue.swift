@@ -23,10 +23,14 @@ struct CoolTextFieldValue<Format : ParseableFormatStyle>: View where Format.Form
             Text(label)
                 .font(.headline)
                 .padding(.leading)
+                .accessibilityHidden(true)
             HStack(alignment: .top) {
                 TextField(placeholder,
                           value: $value,
                           format: format)
+                .accessibilityLabel("\(label). \(placeholder)")
+                .accessibilityHint("TextField. \(validation(value) != nil ? "Error: \(errorMessage!)" : "Enter a \(label)")")
+                .accessibilityValue("\(value)")
             }
             .padding(.horizontal)
             .padding(.vertical, 10)

@@ -12,6 +12,7 @@
 		FB799EC02D95C352005A6288 /* CoolTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB799EBF2D95C352005A6288 /* CoolTextField.swift */; };
 		FB799EC22D963DF1005A6288 /* CoolTextFieldValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB799EC12D963DF1005A6288 /* CoolTextFieldValue.swift */; };
 		FB799EC42D97BD8B005A6288 /* ScoreCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB799EC32D97BD8B005A6288 /* ScoreCover.swift */; };
+		FB799EC62D9A365E005A6288 /* ShareScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB799EC52D9A365E005A6288 /* ShareScore.swift */; };
 		FB98EA562D930FE5006A53BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB98EA502D930FE5006A53BA /* Preview Assets.xcassets */; };
 		FB98EA572D930FE5006A53BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB98EA522D930FE5006A53BA /* Assets.xcassets */; };
 		FB98EA582D930FE5006A53BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98EA532D930FE5006A53BA /* ContentView.swift */; };
@@ -39,6 +40,7 @@
 		FB799EBF2D95C352005A6288 /* CoolTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolTextField.swift; sourceTree = "<group>"; };
 		FB799EC12D963DF1005A6288 /* CoolTextFieldValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolTextFieldValue.swift; sourceTree = "<group>"; };
 		FB799EC32D97BD8B005A6288 /* ScoreCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCover.swift; sourceTree = "<group>"; };
+		FB799EC52D9A365E005A6288 /* ShareScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareScore.swift; sourceTree = "<group>"; };
 		FB98EA3F2D930FD2006A53BA /* ScoreAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB98EA502D930FE5006A53BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FB98EA522D930FE5006A53BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				FB50DB292D93370000D4086E /* SortedByButton.swift */,
 				FB799EBD2D9597D7005A6288 /* SearchField.swift */,
 				FB799EC32D97BD8B005A6288 /* ScoreCover.swift */,
+				FB799EC52D9A365E005A6288 /* ShareScore.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB799EC62D9A365E005A6288 /* ShareScore.swift in Sources */,
 				FBEAE73E2D944CAC006CFB10 /* ViewScore.swift in Sources */,
 				FB98EA582D930FE5006A53BA /* ContentView.swift in Sources */,
 				FB799EC02D95C352005A6288 /* CoolTextField.swift in Sources */,
